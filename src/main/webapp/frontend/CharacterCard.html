@@ -1,0 +1,65 @@
+<!--
+  ~ Copyright 2000-2017 Vaadin Ltd.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  ~ use this file except in compliance with the License. You may obtain a copy of
+  ~ the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  ~ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  ~ License for the specific language governing permissions and limitations under
+  ~ the License.
+  -->
+
+<!-- Dependency resources -->
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+
+<dom-module id="character-card">
+    <template>
+        <style>
+            :host {
+                display: block;
+                border: 1px solid slategrey;
+                border-radius: 5%;
+                width: 350px;
+                padding: 10px;
+                margin: 5px;
+            }
+            .portrait {
+                width: 50px;
+                padding: 10px;
+            }
+            .infoblock > * {
+                display: inline;
+            }
+        </style>
+        <img class="portrait" src="frontend/[[portrait]]">
+        <div class="wrapper">
+        <div class="infoblock">
+            <h5>Name</h5>
+            <p>[[name]]</p>
+        </div>
+        <div class="infoblock">
+            <h5>Job</h5>
+            <p>[[job]]</p>
+        </div>
+        <div class="infoblock">
+            <h5>HP</h5>
+            <p>[[hitpoints]]/[[maxHitpoints]]</p>
+        </div>
+        </div>
+    </template>
+
+    <!-- Polymer boilerplate to register the example-template element -->
+    <script>
+        class CharacterCard extends Polymer.Element {
+            static get is() {
+                return 'character-card'
+            }
+        }
+        customElements.define(CharacterCard.is, CharacterCard);
+    </script>
+</dom-module>
