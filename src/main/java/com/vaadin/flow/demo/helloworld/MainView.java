@@ -40,7 +40,7 @@ public class MainView extends VerticalLayout {
 
     public MainView() {
         Button button = new Button("Add random", event -> addCharacter());
-        add(button, charLayout, new DesignerTestTemplate());
+        add(button, charLayout);
     }
 
     public void addCharacter() {
